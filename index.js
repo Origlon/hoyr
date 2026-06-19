@@ -1,4 +1,3 @@
-
 /* ============================================================
    LESSON 6 — LOOPS: EXERCISES + TEST CASES  (EASY EDITION)
    ------------------------------------------------------------
@@ -36,8 +35,8 @@
 // ----- 1. Count up -----
 // Log the numbers 1 through `maxCount`, one per line, using a for loop.
 let maxCount = 10;
-for(let i = 1; i <=maxCount ; i++) {
-    console.log(i)
+for (let i = 1; i <= maxCount; i++) {
+  console.log(i);
 }
 // your code here
 
@@ -47,11 +46,12 @@ for(let i = 1; i <=maxCount ; i++) {
 
 // ----- 2. Count down -----
 // Log `startNum` down to 0, then log "Liftoff!" after the loop ends.
-let startNum = 6;
+let startNum = 10;
 // your code here
-for(let i = startNum; i >=0; i = i-1 ){
-    console.log(i ,)
-} console.log("lift off")
+for (let i = startNum; i >= 0; i = i - 1) {
+  console.log(i);
+}
+console.log("lift off");
 // TEST 1:  startNum = 10  ->  10 9 8 7 6 5 4 3 2 1 0  then  Liftoff!
 // TEST 2:  startNum = 3   ->  3 2 1 0  then  Liftoff!
 // TEST 3:  startNum = 0   ->  0  then  Liftoff!
@@ -60,8 +60,8 @@ for(let i = startNum; i >=0; i = i-1 ){
 // Log every even number from 2 up to `evenMax`. (Step i += 2, or if (i % 2 === 0).)
 let evenMax = 20;
 // your code here
-for(let i =+ 2 ; i <= evenMax ; i=i+2){
-    console.log(i)
+for (let i = +2; i <= evenMax; i = i + 2) {
+  console.log(i);
 }
 // TEST 1:  evenMax = 20  ->  2 4 6 8 10 12 14 16 18 20
 // TEST 2:  evenMax = 10  ->  2 4 6 8 10
@@ -70,11 +70,11 @@ for(let i =+ 2 ; i <= evenMax ; i=i+2){
 // ----- 4. Sum 1 to max -----
 // sumTotal = 0 before the loop. Add each number 1..`sumMax` to it. Log sumTotal.
 let sumMax = 10;
-let sumTotal = 0
+let sumTotal = 0;
 // your code here
-for(let i = 1; i<= sumMax ; i++){
-    sumTotal +=i
-    console.log(sumTotal)
+for (let i = 1; i <= sumMax; i++) {
+  sumTotal += i;
+  console.log(sumTotal);
 }
 
 // TEST 1:  sumMax = 100  ->  5050
@@ -86,9 +86,9 @@ for(let i = 1; i<= sumMax ; i++){
 let tableN = 7;
 let too = 10;
 // your code here
-for(let i = 1; i<=tableN ; i++){
-    b=tableN * i 
-    console.log(b)
+for (let i = 1; i <= tableN; i++) {
+  b = tableN * i;
+  console.log(b);
 }
 // TEST 1:  tableN = 7  ->  7 x 1 = 7  ...  7 x 10 = 70
 // TEST 2:  tableN = 2  ->  2 x 1 = 2  ...  2 x 10 = 20
@@ -97,8 +97,12 @@ for(let i = 1; i<=tableN ; i++){
 // ----- 6. Factorial -----
 // Multiply 1*2*...*`factN` with an accumulator starting at 1. Log the result.
 let factN = 5;
+let fact = 1;
 // your code here
-
+for (let i = 1; i <= factN; i++) {
+  fact *= i;
+}
+console.log(fact);
 // TEST 1:  factN = 5  ->  120
 // TEST 2:  factN = 3  ->  6
 // TEST 3:  factN = 1  ->  1
@@ -106,7 +110,12 @@ let factN = 5;
 // ----- 7. Count multiples -----
 // Count how many numbers from 1 to `multMax` are divisible by 3 (i % 3 === 0). Log the count.
 let multMax = 50;
+let mult = 0;
 // your code here
+for (let i = 1; i <= multMax; i++) {
+  if (i % 3 === 0) mult++;
+}
+console.log(mult);
 
 // TEST 1:  multMax = 50  ->  16
 // TEST 2:  multMax = 10  ->  3
@@ -114,9 +123,19 @@ let multMax = 50;
 
 // ----- 8. FizzBuzz (lite) -----
 // Loop 1 to `fizzMax`. Multiple of 3 -> "Fizz", of 5 -> "Buzz", both -> "FizzBuzz", else the number.
-let fizzMax = 20;
+let fizzMax = 15;
 // your code here
-
+for (let i = 1; i <= fizzMax; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("buzz");
+  } else {
+    console.log(i);
+  }
+}
 // TEST 1:  fizzMax = 5   ->  1 2 Fizz 4 Buzz
 // TEST 2:  fizzMax = 15  ->  1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz
 // TEST 3:  fizzMax = 3   ->  1 2 Fizz
@@ -127,9 +146,11 @@ let fizzMax = 20;
 
 // ----- 9. Halve it -----
 // While halveN > 1, log halveN then halve it: halveN = Math.floor(halveN / 2).
-let halveN = 100;
+let halveN = 16;
 // your code here
-
+while (halveN > 1) {
+  console.log((halveN = Math.floor(halveN / 2)));
+}
 // TEST 1:  halveN = 100  ->  50 25 12 6 3 1
 // TEST 2:  halveN = 16   ->  8 4 2 1
 // TEST 3:  halveN = 1    ->  (nothing printed)
@@ -137,17 +158,27 @@ let halveN = 100;
 // ----- 10. Count the digits -----
 // Using digitN = Math.floor(digitN / 10) in a while loop, count the digits. Log the count. (Pure math.)
 let digitN = 7384;
+let count = 0;
 // your code here
-
+while (digitN > 0) {
+  digitN = Math.floor(digitN / 10);
+  count++;
+}
+console.log(count);
 // TEST 1:  digitN = 7384  ->  4
 // TEST 2:  digitN = 50    ->  2
 // TEST 3:  digitN = 9     ->  1
 
 // ----- 11. Sum of digits -----
 // Add last digit (sumDigitN % 10) to a total, then sumDigitN = Math.floor(sumDigitN / 10). While > 0. Log total.
-let sumDigitN = 1234;
+let sumDigitN = 999;
+let total = 0;
 // your code here
-
+while (sumDigitN > 0) {
+  total += sumDigitN % 10;
+  sumDigitN = Math.floor(sumDigitN / 10);
+}
+console.log(total);
 // TEST 1:  sumDigitN = 1234  ->  10
 // TEST 2:  sumDigitN = 999   ->  27
 // TEST 3:  sumDigitN = 5     ->  5
@@ -158,6 +189,11 @@ let sumDigitN = 1234;
 let secretNum = 4;
 let guessNum = 1;
 // your code here
+while (guessNum !== secretNum) {
+    console.log("Trying", guessNum)
+    guessNum ++;
+
+} console.log("Found it", secretNum)
 
 // TEST 1:  secretNum = 4, guessNum = 1  ->  Trying 1 / Trying 2 / Trying 3, then  Found it: 4
 // TEST 2:  secretNum = 2, guessNum = 1  ->  Trying 1, then  Found it: 2
@@ -171,6 +207,9 @@ let guessNum = 1;
 // Loop with spellWord[i] and log one letter per line.
 let spellWord = "hello";
 // your code here
+for(let i = 0; i<spellWord.length; i++ ){
+    console.log(spellWord[i])
+}
 
 // TEST 1:  spellWord = "hello"  ->  h e l l o
 // TEST 2:  spellWord = "hi"     ->  h i
@@ -178,8 +217,13 @@ let spellWord = "hello";
 
 // ----- 14. Count a letter -----
 // Count how many times "a" appears in letterWord (if letterWord[i] === "a"). Log the count.
-let letterWord = "banana";
+let letterWord = "apple";
+let count1 = 0 
 // your code here
+for(let i = 0 ; i<letterWord.length; i++){
+    if (letterWord[i] === "a") 
+    count1 ++
+}console.log(count1)
 
 // TEST 1:  letterWord = "banana"  ->  3
 // TEST 2:  letterWord = "aaa"     ->  3
@@ -187,9 +231,13 @@ let letterWord = "banana";
 
 // ----- 15. Count the vowels -----
 // For each char, if "aeiou".includes(vowelText[i]) add to a counter. Log the count.
-let vowelText = "javascript";
+let vowelText = "aeiou";
+let count2 = 0 
 // your code here
-
+for (let i = 0 ; i<vowelText.length ; i++) {
+    if ("aeiou".includes(vowelText[i]))
+    count2 ++
+} console.log(count2)
 // TEST 1:  vowelText = "javascript"  ->  3
 // TEST 2:  vowelText = "aeiou"       ->  5
 // TEST 3:  vowelText = "xyz"         ->  0
@@ -571,6 +619,3 @@ let starRows = 5;
    All 3 tests match for an exercise = you got it right.
    Any mismatch = a bug to hunt. Happy looping!
    ============================================================ */
-
-
-
